@@ -1,7 +1,5 @@
 AOS.init();
 
-
-
 let btn_close_pix = document.querySelector("#btn-modal-close");
 let btn_open_pix = document.querySelector("#btn-modal-pix");
 
@@ -38,3 +36,15 @@ btn_open_wifi.addEventListener("click", (event) => {
     // alert('Hello teste Wifi!')
     document.querySelector(".modal-wifi").style.display = "flex";
 })
+
+
+// Copiar texto
+
+function copiarTexto() {
+    const chave = document.getElementById("chave").innerText; 
+    navigator.clipboard.writeText(chave).then(() => {
+        alert("Chave copiada: " + chave);
+    }).catch(err => {
+        console.error("Erro ao copiar: ", err);
+    });
+}

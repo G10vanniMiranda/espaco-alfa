@@ -395,12 +395,12 @@ p {
   align-items: center;
   position: relative;
   margin: 0 auto;
-  width: 30%;
-  height: 400px;
+  width: 20%;
+  height: 450px;
   color: #000;
   border-radius: 10px;
   background-color: #fff;
-  padding: 50px;
+  padding: 30px;
   margin-bottom: 50px;
 }
 
@@ -428,21 +428,81 @@ p {
   margin-bottom: 20px;
 }
 
+.pix-icon {
+  display: flex;
+  gap: 10px;
+}
+
+.qrcode-pix {
+  width: 50%;
+  background-color: red;
+}
+
+.chave-pix {
+  gap: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 50px;
+  color: #fff;
+  background-color: rgb(73, 199, 73);
+  -webkit-clip-path: polygon(5% 0%, 95% 0%, 100% 30%, 100% 70%, 95% 100%, 5% 100%, 0% 70%, 0% 30%);
+          clip-path: polygon(5% 0%, 95% 0%, 100% 30%, 100% 70%, 95% 100%, 5% 100%, 0% 70%, 0% 30%);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: 0.4s;
+}
+
+.chave-pix:hover {
+  background-color: rgb(10, 133, 63);
+}
+
 .modal-wifi {
   display: none;
-  gap: 20px;
+  gap: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   margin: 0 auto;
-  width: 30%;
-  height: 400px;
+  width: 20%;
+  height: 450px;
   color: #000;
   border-radius: 10px;
   background-color: #fff;
-  padding: 50px;
+  padding: 30px;
   margin-bottom: 50px;
+}
+
+.qr-code-wifi {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.qrcode-wifi {
+  width: 60%;
+}
+
+.icone-wifi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.wifi-icon {
+  width: 70%;
+  height: 60%;
+}
+
+.senha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 body {

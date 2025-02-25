@@ -1,105 +1,132 @@
-.modal-pix{
-    display: none;
+.modal-pix {
+  display: none;
 
-    gap: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    position: relative;
+  position: relative;
 
-    margin: 0 auto;
-    width: 30%;
-    height: 400px;
-    color: #000;
-    border-radius: 10px;
-    background-color: #fff;
+  margin: 0 auto;
+  width: 20%;
+  height: 450px;
+  color: #000;
+  border-radius: 10px;
+  background-color: #fff;
 
-    padding: 50px;
-    margin-bottom: 50px;
+  padding: 30px;
+  margin-bottom: 50px;
 }
 
-.btn-modal-close{
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    cursor: pointer;
+.btn-modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
 
-    width: 35px;
-    height: 35px;
+  width: 35px;
+  height: 35px;
 
-    border-radius: 50%;
-    border: none;
+  border-radius: 50%;
+  border: none;
 
-    font-size: 18px;
-    background-color: red;
+  font-size: 18px;
+  background-color: red;
 
-    &:hover{
-        color: red;
-        background-color: white;
-    }
+  &:hover {
+    color: red;
+    background-color: white;
+  }
 }
 
-.pix{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+.pix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pix-icon {
+  display: flex;
+  gap: 10px;
+}
+
+.qrcode-pix {
+  width: 50%;
+  background-color: red;
+}
+
+.chave-pix {
+  gap: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 220px;
+  height: 50px;
+  color: #fff;
+
+  background-color: rgb(73, 199, 73);
+  clip-path: polygon(5% 0%, 95% 0%, 100% 30%, 100% 70%, 95% 100%, 5% 100%, 0% 70%, 0% 30%);   
+  cursor: pointer;
+  user-select: none;
+  transition: .4s;
+}
+
+.chave-pix:hover{
+  background-color: rgb(10, 133, 63);
 }
 
 // Wi-Fi
 
-.modal-wifi{
-    display: none;
+.modal-wifi {
+  display: none;
 
-    gap: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    position: relative;
+  position: relative;
 
-    margin: 0 auto;
-    width: 30%;
-    height: 400px;
-    color: #000;
-    border-radius: 10px;
-    background-color: #fff;
+  margin: 0 auto;
+  width: 20%;
+  height: 450px;
+  color: #000;
+  border-radius: 10px;
+  background-color: #fff;
 
-    padding: 50px;
-    margin-bottom: 50px;
+  padding: 30px;
+  margin-bottom: 50px;
 }
 
+.qr-code-wifi{
+  display: flex;
 
+  width: 100%;
+  height: 100%;
+}
 
+.qrcode-wifi {
+  width: 60%;
+}
 
-// body{
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-// }
+.icone-wifi{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-// .container{    
-//     height: 500px;
-//     width: 500px;
+  width: 50%;
+}
 
-//     display: flex;
-//     align-items: center;
-//     flex-direction: column;
-//     justify-content: center;
-//     background-color: #fff;
-//     color: black;
-// }
+.wifi-icon{
+  width: 70%;
+  height: 60%;
+}
 
-// .pix{
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     margin-bottom: 20px;
-// }
-
-// img{
-//     height: 150px;
-
-//     background-color: red;
-// }
+.senha{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
