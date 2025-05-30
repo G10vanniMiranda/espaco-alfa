@@ -1,6 +1,4 @@
 .modal-pix {
-  display: none;
-
   gap: 20px;
   display: flex;
   flex-direction: column;
@@ -17,6 +15,10 @@
 
   padding: 30px;
   margin-bottom: 50px;
+}
+
+.modal-pix.hidden {
+  display: none;
 }
 
 .btn-modal-close {
@@ -99,6 +101,10 @@
 
   padding: 30px;
   margin-bottom: 50px;
+}
+
+.modal-wifi.hidden {
+  display: none;
 }
 
 .qr-code-wifi{
