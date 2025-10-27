@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin | Espaço Alfa</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container" style="max-width: 760px; margin: 32px auto; padding: 0 16px;">
+    <header style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom: 16px;">
+      <h1>Administração</h1>
+      <nav>
+        <a href="./index.html" class="button-contact" style="padding:8px 12px;">← Voltar ao site</a>
+      </nav>
+    </header>
+
+    <section id="admin-login" style="border:1px solid #ddd; padding:16px; border-radius:8px;">
+      <h2>Acesso</h2>
+      <p>Faça login para editar as informações públicas do site (preços, PIX e Wi‑Fi).</p>
+      <button id="btn-google" class="button-contact" style="margin-top:8px;">Entrar com Google</button>
+      <p style="font-size:12px; color:#666; margin-top:8px;">Necessário habilitar o provedor Google no Firebase Auth e autorizar o e‑mail do administrador nas regras.</p>
+    </section>
+
+    <section id="admin-panel" style="display:none; border:1px solid #ddd; padding:16px; border-radius:8px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+        <h2>Configurações do Site</h2>
+        <button id="btn-logout" class="button-contact" style="background:#c62828;">Sair</button>
+      </div>
+
+      <form id="form-settings" style="display:grid; gap:12px; margin-top:12px;">
+        <fieldset style="border:1px solid #eee; padding:12px; border-radius:6px;">
+          <legend><strong>PIX</strong></legend>
+          <label style="display:block; margin-bottom:6px;">Chave PIX
+            <input id="admin-pix-chave" type="text" placeholder="ex.: 69999999999" style="width:100%; padding:8px;" />
+          </label>
+        </fieldset>
+
+        <fieldset style="border:1px solid #eee; padding:12px; border-radius:6px;">
+          <legend><strong>Wi‑Fi</strong></legend>
+          <label style="display:block; margin-bottom:6px;">SSID (Rede)
+            <input id="admin-wifi-ssid" type="text" placeholder="ex.: MEU-WIFI" style="width:100%; padding:8px;" />
+          </label>
+          <label style="display:block;">Senha
+            <input id="admin-wifi-pass" type="text" placeholder="ex.: 12345678" style="width:100%; padding:8px;" />
+          </label>
+        </fieldset>
+
+        <fieldset style="border:1px solid #eee; padding:12px; border-radius:6px;">
+          <legend><strong>Preços (R$)</strong></legend>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <label>Tap Fade
+              <input id="admin-price-tap-fade" type="number" step="0.01" min="0" placeholder="40" />
+            </label>
+            <label>Mid Fade
+              <input id="admin-price-mid-fade" type="number" step="0.01" min="0" placeholder="40" />
+            </label>
+            <label>Corte + Barba
+              <input id="admin-price-corte-barba" type="number" step="0.01" min="0" placeholder="65" />
+            </label>
+            <label>Platinado
+              <input id="admin-price-platinado" type="number" step="0.01" min="0" placeholder="180" />
+            </label>
+            <label>Infantil
+              <input id="admin-price-infantil" type="number" step="0.01" min="0" placeholder="40" />
+            </label>
+            <label>Low Fade
+              <input id="admin-price-low-fade" type="number" step="0.01" min="0" placeholder="40" />
+            </label>
+          </div>
+        </fieldset>
+
+        <div style="display:flex; gap:12px; align-items:center;">
+          <button id="btn-save" type="submit" class="button-contact">Salvar alterações</button>
+          <span id="status" style="font-size:12px; color:#666;"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js"></script>
+  <script src="./firebase-config.js"></script>
+  <script src="./admin.js" defer></script>
+</body>
+</html>

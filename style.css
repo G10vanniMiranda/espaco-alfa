@@ -1,4 +1,5 @@
-* {
+@charset "UTF-8";
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   outline: 0;
@@ -359,6 +360,29 @@ p {
   bottom: 5px;
   right: 5px;
   z-index: 99;
+  /* Entrada suave e "respiração" sutil para chamar atenção */
+  animation: whatsapp-enter 0.6s ease-out both, whatsapp-breathe 3s ease-in-out 2s infinite;
+  will-change: transform, filter;
+  outline: none;
+  /* Efeito de onda ao clicar */
+}
+.btn-whatsapp::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  transform: scale(0.9);
+  opacity: 0;
+}
+.btn-whatsapp:active::after {
+  animation: whatsapp-ripple 0.6s ease-out;
+}
+.btn-whatsapp:focus-visible {
+  outline: 3px solid rgba(37, 211, 102, 0.6);
+  outline-offset: 2px;
+  border-radius: 999px;
 }
 .btn-whatsapp img {
   max-width: 74px;
@@ -391,6 +415,45 @@ p {
 @media screen and (max-width: 768px) {
   .btn-whatsapp img {
     max-width: 64px;
+  }
+}
+/* Animações do botão WhatsApp */
+@keyframes whatsapp-enter {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes whatsapp-breathe {
+  0%, 100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 0 rgba(37, 211, 102, 0));
+  }
+  50% {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 12px rgba(37, 211, 102, 0.45));
+  }
+}
+@keyframes whatsapp-ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-whatsapp {
+    animation: none;
+  }
+  .btn-whatsapp img {
+    transition: none;
   }
 }
 .modal-pix {
@@ -456,8 +519,7 @@ p {
   height: 50px;
   color: #fff;
   background-color: rgb(73, 199, 73);
-  -webkit-clip-path: polygon(5% 0%, 95% 0%, 100% 30%, 100% 70%, 95% 100%, 5% 100%, 0% 70%, 0% 30%);
-          clip-path: polygon(5% 0%, 95% 0%, 100% 30%, 100% 70%, 95% 100%, 5% 100%, 0% 70%, 0% 30%);
+  clip-path: polygon(5% 0%, 95% 0%, 100% 30%, 100% 70%, 95% 100%, 5% 100%, 0% 70%, 0% 30%);
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -522,7 +584,7 @@ body {
   width: 100%;
   height: 100vh;
   position: relative;
-  font-family: "Sora", sans-serif;
+  font-family: "Sora", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #FFF;
   background-color: #06121E;
 }
@@ -534,10 +596,6 @@ button {
 
 svg {
   width: 100%;
-}
-
-img {
-  width: 500px;
 }
 
 a {

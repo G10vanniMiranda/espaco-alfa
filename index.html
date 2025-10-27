@@ -3,7 +3,16 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Espaço Alfa — barbearia e estética masculina em Porto Velho-RO. Agende seu horário e conheça nossos serviços." />
+  <meta name="theme-color" content="#06121E" />
+  <meta property="og:title" content="Espaço Alfa" />
+  <meta property="og:description" content="Barbearia e estética masculina em Porto Velho-RO." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:url" content="/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="stylesheet" href="style.css" />
 
@@ -12,8 +21,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
@@ -30,11 +39,11 @@
     <header>
       <nav class="header-content container">
         <div class="header-icons" data-aos="fade-down">
-          <a href="https://www.instagram.com/alfa.pvh/#">
+          <a href="https://www.instagram.com/alfa.pvh/#" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-instagram fa-2x"></i>
           </a>
           <p>Nossas <br />redes sociais</p>
-          <a href="https://www.facebook.com/alfa.pvh">
+          <a href="https://www.facebook.com/alfa.pvh" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-facebook fa-2x"></i>
           </a>
           <!-- 
@@ -47,7 +56,7 @@
         <!-- AREA DA LOGO -->
         <div class="header-logo" data-aos="fade-up" data-aos-delay="300">
           <img data-aos="flip-up" data-aos-delay="400" data-aos-duration="1500" src="assets/logo.png"
-            alt="Logo da Barbearia" />
+            alt="Logo da Barbearia" width="250" height="250" />
         </div>
         <!-- <img id="barbeiroSumir" src="./assets/barbeiro.png" alt="barbeiro juan"> -->
         <!--<img id="barbeiro" src="./assets/barbeiro.png" alt="barbeiro vitor"> -->
@@ -73,7 +82,7 @@
   <section class="about">
     <div class="about-content container">
       <div data-aos="zoom-in" data-aos-delay="100">
-        <img src="assets/EditImg.png" alt="Imagem sobre a barbearia" />
+        <img src="assets/EditImg.png" alt="Imagem sobre a barbearia" loading="lazy" />
       </div>
 
       <div class="about-description" data-aos="zoom-out-left" data-aos-delay="250">
@@ -98,49 +107,49 @@
     </div>
 
     <section class="haircuts">
-      <div class="haircut" data-aos="fade-up" data-aos-delay="150">
-        <img src="assets/corte4.jpeg" alt="Corte Normal" />
+          <div class="haircut" data-aos="fade-up" data-aos-delay="150">
+        <img src="assets/corte4.jpeg" alt="Corte Normal" loading="lazy" />
         <div class="haircut-info">
           <strong>Tap Fade</strong>
-          <button>R$ 40,00</button>
+              <button id="price-tap-fade">R$ 40,00</button>
         </div>
       </div>
       <div class="haircut" data-aos="fade-up" data-aos-delay="250">
-        <img src="assets/corte5.jpeg" alt="Barba Completa" />
+        <img src="assets/corte5.jpeg" alt="Barba Completa" loading="lazy" />
         <div class="haircut-info">
           <strong>Mid Fade</strong>
-          <button>R$ 40,00</button>
+              <button id="price-mid-fade">R$ 40,00</button>
         </div>
       </div>
       <div class="haircut" data-aos="fade-up" data-aos-delay="400">
-        <img src="assets/corte2.jpeg" alt="Corte e Barba" />
+        <img src="assets/corte2.jpeg" alt="Corte e Barba" loading="lazy" />
         <div class="haircut-info">
           <strong>Corte + Barba</strong>
-          <button>R$ 65,00</button>
+              <button id="price-corte-barba">R$ 65,00</button>
         </div>
       </div>
     </section>
 
     <section class="haircuts">
       <div class="haircut" data-aos="fade-up" data-aos-delay="150">
-        <img src="assets/corte6.jpeg" alt="Platinado" />
+        <img src="assets/corte6.jpeg" alt="Platinado" loading="lazy" />
         <div class="haircut-info">
           <strong>Platinado</strong>
-          <button>R$ 180,00</button>
+              <button id="price-platinado">R$ 180,00</button>
         </div>
       </div>
       <div class="haircut" data-aos="fade-up" data-aos-delay="250">
-        <img src="assets/corte8.jpeg" alt="Barba Completa" />
+        <img src="assets/corte8.jpeg" alt="Barba Completa" loading="lazy" />
         <div class="haircut-info">
           <strong>Corte Infantil</strong>
-          <button>R$ 40,00</button>
+              <button id="price-infantil">R$ 40,00</button>
         </div>
       </div>
       <div class="haircut" data-aos="fade-up" data-aos-delay="400">
-        <img src="assets/corte7.jpeg" alt="Corte e Barba" />
+        <img src="assets/corte7.jpeg" alt="Corte e Barba" loading="lazy" />
         <div class="haircut-info">
           <strong>Low Fade</strong>
-          <button>R$ 40,00</button>
+              <button id="price-low-fade">R$ 40,00</button>
         </div>
       </div>
     </section>
@@ -164,11 +173,11 @@
   </section>
 
   <!-- MODAL pix -->
-  <section class="modal-pix hidden">
-    <button id="btn-modal-close" class="btn-modal-close">X</button>
+  <section class="modal-pix hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="pix-title">
+    <button id="btn-modal-close" class="btn-modal-close" aria-label="Fechar modal Pix">X</button>
 
     <div class="pix">
-      <h2>Pague com</h2>
+      <h2 id="pix-title">Pague com</h2>
       <div class="pix-icon">
         <i class="fa-brands fa-pix"></i>
         <h2>Pix</h2>
@@ -187,11 +196,11 @@
   </section>
 
   <!-- MODAL wifi -->
-  <section class="modal-wifi hidden">
-    <button id="btn-modal-wifi-close" class="btn-modal-close">X</button>
+  <section class="modal-wifi hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="wifi-title">
+    <button id="btn-modal-wifi-close" class="btn-modal-close" aria-label="Fechar modal Wi‑Fi">X</button>
 
     <div class="wifi">
-      <h2>Free</h2>
+      <h2 id="wifi-title">Free</h2>
       <h1>WIFI</h1>
     </div>
 
@@ -206,8 +215,8 @@
     </div>
 
     <div class="senha">
-      <h4>REDE: ROCHA-2.4G</h4>
-      <h5>SENHA: JV303106</h5>
+      <h4>REDE: <span id="wifi-ssid">ROCHA-2.4G</span></h4>
+      <h5>SENHA: <span id="wifi-pass">JV303106</span></h5>
     </div>
   </section>
 
@@ -249,11 +258,16 @@
   <!-- Button Whatsapp -->
 
   <a href="https://wa.me/556993318786?text=Ol%C3%A1%20vamos%20agendar%20?" class="btn-whatsapp" target="_blank"
-    id="btn-whatsapp">
+    rel="noopener noreferrer" id="btn-whatsapp">
     <img src="assets/whatssapp.svg" alt="Botão Whatsapp" />
     <span class="tooltip-text">Agende seu horário</span>
   </a>
 
+  <!-- Firebase (preencha firebase-config.js com as suas chaves públicas) -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="settings.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 

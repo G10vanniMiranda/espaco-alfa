@@ -1,50 +1,62 @@
-AOS.init();
+// Inicializa AOS (carregado com defer no head)
+if (window.AOS && typeof AOS.init === 'function') {
+    AOS.init();
+}
 
-let btn_close_pix = document.querySelector("#btn-modal-close");
-let btn_open_pix = document.querySelector("#btn-modal-pix");
+// Helpers para abrir/fechar modais via classe 'hidden'
+function openModal(selector) {
+    const el = document.querySelector(selector);
+    if (el) {
+        el.classList.remove('hidden');
+        el.setAttribute('aria-hidden', 'false');
+    }
+}
 
-let btn_close_wifi = document.querySelector("#btn-modal-wifi-close");
+function closeModal(selector) {
+    const el = document.querySelector(selector);
+    if (el) {
+        el.classList.add('hidden');
+        el.setAttribute('aria-hidden', 'true');
+    }
+}
 
-let btn_open_wifi = document.querySelector("#btn-modal-wifi");
+// Bind dos botões (defensivo: só se existir na página)
+const btnClosePix = document.querySelector('#btn-modal-close');
+const btnOpenPix = document.querySelector('#btn-modal-pix');
+const btnCloseWifi = document.querySelector('#btn-modal-wifi-close');
+const btnOpenWifi = document.querySelector('#btn-modal-wifi');
 
-// pix
-btn_close_pix.addEventListener("click", (event) => {
-    event.preventDefault();
+btnClosePix && btnClosePix.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeModal('.modal-pix');
+});
 
-    // alert('Hello teste OK!')
-    document.querySelector(".modal-pix").style.display = "none";
-})
+btnOpenPix && btnOpenPix.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal('.modal-pix');
+});
 
-btn_open_pix.addEventListener("click", (event) => {
-    event.preventDefault();
+btnCloseWifi && btnCloseWifi.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeModal('.modal-wifi');
+});
 
-    // alert('Hello teste Pix!')
-    document.querySelector(".modal-pix").style.display = "flex";
-})
-
-// wifi
-btn_close_wifi.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    // alert('modal wifi close teste OK!')
-    document.querySelector(".modal-wifi").style.display = "none";
-})
-
-btn_open_wifi.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    // alert('Hello teste Wifi!')
-    document.querySelector(".modal-wifi").style.display = "flex";
-})
-
+btnOpenWifi && btnOpenWifi.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal('.modal-wifi');
+});
 
 // Copiar texto
-
 function copiarTexto() {
-    const chave = document.getElementById("chave").innerText; 
-    navigator.clipboard.writeText(chave).then(() => {
-        alert("Chave copiada: " + chave);
-    }).catch(err => {
-        console.error("Erro ao copiar: ", err);
-    });
+    const chaveEl = document.getElementById('chave');
+    if (!chaveEl) return;
+    const chave = chaveEl.innerText;
+    navigator.clipboard
+        .writeText(chave)
+        .then(() => {
+            alert('Chave copiada: ' + chave);
+        })
+        .catch((err) => {
+            console.error('Erro ao copiar: ', err);
+        });
 }
